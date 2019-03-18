@@ -1,3 +1,11 @@
+@media(min-width: 1024px) {
+  h1 {
+    font-size: 50px;
+  }
+  h2 {
+    font-size: 35px;
+  }
+}
 body {
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
@@ -56,6 +64,44 @@ section .row img {
 
 .col-md-6 {
   margin: 0 0 30px;
+}
+button {
+  border: none;
+}
+button:hover {
+  cursor: pointer;
+}
+.button{
+border-radius: 75px;
+  display: inline-block;
+  font-family: 'Barlow', Helvetica, sans-serif;
+  font-size: 5px;
+  
+  line-height: normal;
+  padding: 15px 30px;
+  text-align: center;
+  text-decoration: none;
+  transition: opacity 0.5s ease;
+}
+.button:hover {
+  opacity: 0.75;
+}
+.button-primary {
+  background-color: #FEFDFC;
+  color: #FFFFFF;
+}
+.button-secondary {
+  background-color: #A1A1A1;
+  color: #FFFFFF;
+}
+input {
+  border-radius: 75px;
+  margin-bottom: 15px;
+  padding: 5px;
+  border: none;
+  box-shadow: none;
+  transition: border-color 0.5s ease;
+  width: 75%;
 }
 body {
 	font-family: Georgia, serif;
