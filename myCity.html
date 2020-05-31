@@ -1,0 +1,88 @@
+<html lang="en" ng-app="acitys">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <style>
+* {
+  font-size: 14px;
+  font-family: 'Titillium Web', sans-serif;
+  color: $black;
+}
+
+h1 {
+  font-size: 32px;
+}
+
+input {
+  border: 0;
+  margin-right: 5px;
+  background: transparent;
+  border-bottom: 1px solid black;
+  width: 80px;
+  padding: 8px;
+  
+  
+  &:focus, &:active {
+    outline: 0;
+    width: 200px;
+    border-bottom-color: #F97D75;
+  }
+}
+
+button {
+  background-color: #F97D75;
+  border: 0;
+  padding: 8px 20px;
+  color: white;
+  text-transform: uppercase;
+  cursor: pointer;
+  
+  &:focus, &:active {
+    outline: 0;
+  }
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 25px;
+}
+
+li {
+  border: 1px solid black;
+  display: inline-block;
+  padding: 5px 10px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  text-transform: capitalize;
+}
+    </style>
+</head>
+<body ng-controller="addcity">
+   <h1>Add your 10 City name</h1>
+  
+  <form name="city" ng-submit="acity()">
+     <input type="text" name="newCity" ng-model="newCity" required />
+     <button ng-disabled="city.$invalid" ng-click="acity()">Add</button>
+  </form>
+  
+  <ul>
+    <li ng-repeat="skill in skills" class="{'fadeOut' : skill.done}">
+      <span>{{skill.title}}</span>
+    </li>
+  </ul>
+    <script>
+    angular
+	.module('acitys', [])
+	.controller('addcity', ['$scope', function($scope) {
+
+		$scope.skills = [];
+
+		$scope.acity = function() {
+			$scope.skills.push({'title': $scope.newCity, 'done':false})
+			$scope.newCity = ''
+		}
+
+		
+	}])</script>
+</body>
+</html>
